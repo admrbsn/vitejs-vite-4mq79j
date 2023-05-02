@@ -103,12 +103,12 @@ export default {
           {
             participant: 'Marc',
             video:
-              'https://ziggeo-to-b2-production.b-cdn.net/a71c0a9d1fd46b6ba5821053d0eb2886-91a2cfa7fabc4e1a72f7d7b114a70045.mp4',
+              'mark.mp4',
           },
           {
             participant: 'Luke',
             video:
-              'https://ziggeo-to-b2-production.b-cdn.net/fa832c1c272a203e8f33d66b9355982a-e1a2f414073232931f50d3aaaa1c81a4.mp4',
+              'luke.mp4',
           },
         ],
       },
