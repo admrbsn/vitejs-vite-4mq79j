@@ -13,9 +13,7 @@ export default {
     let storiesSlider = null;
     let audio = null;
     const playButtonVisible = ref(true);
-    const audioTrackURL = ref(
-      'https://storage.googleapis.com/tribute-music-prod/116_full_where-we-go-2_0152.mp3'
-    );
+    const audioTrackURL = ref('audio.mp3');
 
     const loadTribute = () => {
       // add "in" class to animate
@@ -79,36 +77,30 @@ export default {
         },
         stories: [
           {
-            video:
-              'https://player.vimeo.com/progressive_redirect/playback/823050002/container/62ab6732-5368-4c89-8b11-e8fe6f614de1/7ef5f6da-7ed8875c?expires=1683129391&loc=external&signature=f4552b8e9978b9a428e1cfef6dbdcf85fffb4953a740d6ecdf0b8462df627ac0',
+            video: 'intro.mp4',
           },
           {
             video: 'title.mp4',
           },
           {
             participant: 'Jimmy',
-            video:
-              'jimmy.mp4',
+            video: 'jimmy.mp4',
           },
           {
             participant: 'Laurel',
-            video:
-              'laurel.mp4',
+            video: 'laurel.mp4',
           },
           {
             participant: 'Emma',
-            video:
-              'emma.mp4',
+            video: 'emma.mp4',
           },
           {
             participant: 'Marc',
-            video:
-              'mark.mp4',
+            video: 'mark.mp4',
           },
           {
             participant: 'Luke',
-            video:
-              'luke.mp4',
+            video: 'luke.mp4',
           },
         ],
       },
