@@ -88,7 +88,7 @@ export default {
           {
             participant: 'Jimmy',
             video:
-              'https://tribute-video-upload-production.b-cdn.net/6ac651d04bff4b56acab2eb0fa64eeae_03d4db60193dacf8f78421fddb940f79_2c2014dc2a61536ddac99ee24df48605.mp4',
+              'jimmy.mp4',
           },
           {
             participant: 'Laurel',
