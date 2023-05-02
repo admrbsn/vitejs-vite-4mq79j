@@ -93,12 +93,12 @@ export default {
           {
             participant: 'Laurel',
             video:
-              'https://ziggeo-to-b2-production.b-cdn.net/b4c980a3eeaab8e269703fb0b4500992-6232c9e678eb9b396e37297848351fa2.mp4',
+              'laurel.mp4',
           },
           {
             participant: 'Emma',
             video:
-              'https://tribute-video-upload-production.b-cdn.net/6ac651d04bff4b56acab2eb0fa64eeae_ba9f1a1a4c95749cc1c29c34ff893630_3f6513d14789c23b3d28a7844b58e729.mp4',
+              'emma.mp4',
           },
           {
             participant: 'Marc',
