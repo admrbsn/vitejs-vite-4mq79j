@@ -77,6 +77,9 @@ export default {
         },
         stories: [
           {
+            image: 'placeholder.png',
+          },
+          {
             video: 'intro.mp4',
           },
           /*{
@@ -136,6 +139,8 @@ export default {
       @click="() => playTribute()"
       class="
         play-btn
+        hidden
+        md:inline-block
         absolute
         inset-0
         flex
