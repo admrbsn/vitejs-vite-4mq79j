@@ -139,6 +139,7 @@ export default function createStoriesSlider(el, params = {}) {
       try {
         videoRaf = requestAnimationFrame(() => {
           videoEl.play();
+          videoEl.muted = false;
         });
       } catch (err) {
         // error
