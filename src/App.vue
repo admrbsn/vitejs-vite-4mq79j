@@ -77,7 +77,7 @@ export default {
         },
         stories: [
           {
-            image: 'placeholder.png',
+            html: '<div class="flex items-center justify-center w-screen h-screen bg-[#6fd0b6]"><button class="play-btn absolute inset-0 flex items-center justify-center z-10"><svg data-v-7a7a37b1="" class="ov-icon" aria-hidden="true" width="76.8" height="76.8" viewBox="-1.6 -1.6 19.2 19.2" fill="currentColor" style="font-size: 4.8em;"><path d="M16 8A8 8 0 110 8a8 8 0 0116 0zM6.79 5.093A.5.5 0 006 5.5v5a.5.5 0 00.79.407l3.5-2.5a.5.5 0 000-.814l-3.5-2.5z"></path></svg></button></div>',
           },
           /*{
             video: 'intro.mp4',
@@ -173,6 +173,17 @@ export default {
         preload="metadata"
         class="
           object-contain object-center
+          block
+          border-none
+          outline-none
+          bg-transparent
+        "
+      />
+      <div
+        v-else-if="tributeStory.html"
+        v-html="tributeStory.html"
+        class="
+          object-cover object-center
           block
           border-none
           outline-none
