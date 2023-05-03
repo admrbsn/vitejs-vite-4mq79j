@@ -24,7 +24,7 @@ export default {
       // enable slider (as we passed enabled: false initially)
       storiesSlider.enable();
       // add "intro-playing" class to disble pointer-events during intro
-      storiesSlider.el.classList.add('intro-playing');
+      //storiesSlider.el.classList.add('intro-playing');
       // remove the "intro-playing" class after 7 seconds
       //setTimeout(() => {
       //  storiesSlider.el.classList.remove('intro-playing');
