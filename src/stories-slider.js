@@ -335,6 +335,7 @@ export default function createStoriesSlider(el, params = {}) {
   const autoplayTest = () => {
     console.log('Tribute video started');
     enable();
+    initSubSwipers();
   };
 
   const pauseTribute = () => {
