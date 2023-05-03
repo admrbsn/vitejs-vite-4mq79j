@@ -294,9 +294,9 @@ export default function createStoriesSlider(el, params = {}) {
             isTouched = false;
           },
           init(swiper) {
-            if (!enabled) return;
+            //if (!enabled) return;
             if (activeSubSwiperIndex !== subSwiperIndex) {
-              stopAutoplay(swiper);
+              //stopAutoplay(swiper);
             } else {
               requestAnimationFrame(() => {
                 onSubSwiperSlideChange(swiper);
