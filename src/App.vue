@@ -24,7 +24,7 @@ export default {
       // enable slider (as we passed enabled: false initially)
       storiesSlider.enable();
       // add "intro-playing" class to disble pointer-events during intro
-      //storiesSlider.el.classList.add('intro-playing');
+      storiesSlider.el.classList.add('intro-playing');
       // remove the "intro-playing" class after 7 seconds
       //setTimeout(() => {
       //  storiesSlider.el.classList.remove('intro-playing');
@@ -134,6 +134,7 @@ export default {
     :swiper="Swiper"
     :enabled="false"
     :autoplay-duration="5000"
+    :autoplayDisableOnInteraction="false"
     @storiesSlider="onStoriesSlider"
     @pauseTribute="onPauseTribute"
     @resumeTribute="onResumeTribute"
@@ -143,7 +144,6 @@ export default {
       @click="() => playTribute()"
       class="
         play-btn
-        hidden
         absolute
         inset-0
         flex

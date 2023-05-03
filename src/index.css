@@ -125,9 +125,9 @@ body {
   pointer-events: none;
   transform: translate3d(0, 0, 0);
 }
-.stories-slider-pagination .stories-slider-pagination-bullet:first-of-type {
-  @apply hidden; /* hack to hide the first bullet since it's a placeholder frame to initiate the slider on mobile */
-}
+/*.stories-slider-pagination .stories-slider-pagination-bullet:first-of-type {
+  @apply hidden;
+}*/
 .stories-slider-pagination-bullet {
   width: 100%;
   flex-shrink: 10;
