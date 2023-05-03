@@ -90,6 +90,9 @@ export default {
             video: 'intro.mp4',
           },
           {
+            video: 'intro.mp4',
+          },
+          {
             participant: 'Jimmy',
             video: 'jimmy.mp4',
           },
