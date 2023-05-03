@@ -10,12 +10,8 @@ export default function createStoriesSlider(el, params = {}) {
   let { enabled = true } = params;
 
   let activeSubSwiperIndex = 0;
-
   let videoRaf;
   const subSwipers = [];
-
-  let slideIndexesChangeRaf;
-
   let isTouched;
   let touchStartTime;
   let touchStartTimeout;

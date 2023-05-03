@@ -137,11 +137,11 @@ export default {
       ctx.emit('storiesSlider', storiesSliderRef.value);
     });
 
-    onBeforeUnmount(() => {
-      if (storiesSliderRef.value && storiesSliderRef.value.destroy) {
-        storiesSliderRef.value.destroy();
-      }
-    });
+    //onBeforeUnmount(() => {
+    //  if (storiesSliderRef.value && storiesSliderRef.value.destroy) {
+    //    storiesSliderRef.value.destroy();
+    //  }
+    //});
 
     return {
       elRef,
