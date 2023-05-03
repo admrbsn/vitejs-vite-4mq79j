@@ -332,6 +332,15 @@ export default function createStoriesSlider(el, params = {}) {
     });
   };
 
+  const autoplayTest = () => {
+    console.log('Tribute video started');
+    subSwipers.forEach((subSwiper, subSwiperIndex) => {
+      if (subSwiperIndex === activeSubSwiperIndex) {
+        resumeAutoPlay(subSwiper);
+      }
+    });
+  };
+
   const pauseTribute = () => {
     console.log('Tribute video paused');
     subSwipers.forEach((subSwiper, subSwiperIndex) => {
@@ -380,6 +389,7 @@ export default function createStoriesSlider(el, params = {}) {
     destroy,
     enable,
     disable,
+    autoplayTest,
     pauseTribute,
     resumeTribute,
   };

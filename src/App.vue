@@ -50,6 +50,10 @@ export default {
       storiesSlider = instance;
     };
 
+    const onAutoplayTest = () => {
+      storiesSlider.autoplayTest();
+    };
+
     const onPauseTribute = () => {
       if (audio) {
         audio.pause(); // Pause the audio
@@ -114,6 +118,7 @@ export default {
       playButtonVisible,
       tributeData,
       onStoriesSlider,
+      onAutoplayTest,
       onPauseTribute,
       onResumeTribute,
     };
@@ -128,6 +133,7 @@ export default {
     :enabled="false"
     :autoplay-duration="5000"
     @storiesSlider="onStoriesSlider"
+    @autoplayTest="onAutoplayTest"
     @pauseTribute="onPauseTribute"
     @resumeTribute="onResumeTribute"
   >
