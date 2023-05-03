@@ -136,6 +136,8 @@ export default {
       @click="() => playTribute()"
       class="
         play-btn
+        hidden
+        md:inline-block
         absolute
         inset-0
         flex
