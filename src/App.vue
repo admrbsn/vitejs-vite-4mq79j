@@ -24,18 +24,18 @@ export default {
       // enable slider (as we passed enabled: false initially)
       storiesSlider.enable();
       // add "intro-playing" class to disble pointer-events during intro
-      storiesSlider.el.classList.add('intro-playing');
+      //storiesSlider.el.classList.add('intro-playing');
       // remove the "intro-playing" class after 7 seconds
-      setTimeout(() => {
-        storiesSlider.el.classList.remove('intro-playing');
-      }, 7000);
+      //setTimeout(() => {
+      //  storiesSlider.el.classList.remove('intro-playing');
+      //}, 7000);
       // hide play button
       playButtonVisible.value = false;
       // delay playTrack method for 7 seconds (7000 milliseconds)
-      setTimeout(() => {
-        // play background music
-        playTrack(audioTrackURL.value, 0.25);
-      }, 7000);
+      //setTimeout(() => {
+      // play background music
+      //  playTrack(audioTrackURL.value, 0.25);
+      //}, 7000);
     };
 
     const playTrack = (track, volume = 1.0) => {
