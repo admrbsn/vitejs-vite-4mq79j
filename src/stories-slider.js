@@ -328,10 +328,9 @@ export default function createStoriesSlider(el, params = {}) {
     });
   };
 
-  const autoplayTest = () => {
+  const autoplayTest = (swiper) => {
     console.log('Tribute video started');
-    enable();
-    initSubSwipers();
+    startAutoplay(swiper);
   };
 
   const pauseTribute = () => {

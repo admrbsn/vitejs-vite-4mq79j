@@ -80,10 +80,10 @@ export default {
           name: 'Graduation Tribute for Pete',
         },
         stories: [
-          /*{
+          {
             video: 'intro.mp4',
           },
-          {
+          /*{
             video: 'title.mp4',
           },*/
           {
