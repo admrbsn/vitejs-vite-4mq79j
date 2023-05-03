@@ -79,10 +79,10 @@ export default {
           {
             image: 'placeholder.png',
           },
-          {
+          /*{
             video: 'intro.mp4',
           },
-          /*{
+          {
             video: 'title.mp4',
           },*/
           {
@@ -140,7 +140,6 @@ export default {
       class="
         play-btn
         hidden
-        md:inline-block
         absolute
         inset-0
         flex
