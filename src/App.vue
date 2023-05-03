@@ -76,12 +76,12 @@ export default {
           name: 'Graduation Tribute for Pete',
         },
         stories: [
-          /*{
+          {
             video: 'intro.mp4',
           },
           {
             video: 'title.mp4',
-          },*/
+          },
           {
             participant: 'Jimmy',
             video: 'jimmy.mp4',

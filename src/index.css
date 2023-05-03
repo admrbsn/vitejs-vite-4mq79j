@@ -38,6 +38,13 @@ body {
 .stories-slider
   > .swiper
   > .swiper-wrapper
+  > .swiper-slide:first-of-type:before {
+  content: 'Play';
+  @apply absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 z-[200];
+}
+.stories-slider
+  > .swiper
+  > .swiper-wrapper
   > .swiper-slide:not(.swiper-slide-next, .swiper-slide-prev, .swiper-slide-active) {
   opacity: 0;
 }
@@ -102,7 +109,7 @@ body {
 }
 .stories-slider-button-next {
   right: 0;
-  width: 70%;
+  width: 30%;
 }
 .stories-slider-button-next::before {
   background-image: linear-gradient(to left, #000, rgba(0, 0, 0, 0));
