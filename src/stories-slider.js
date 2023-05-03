@@ -294,9 +294,9 @@ export default function createStoriesSlider(el, params = {}) {
             isTouched = false;
           },
           init(swiper) {
-            //if (!enabled) return;
+            if (!enabled) return;
             if (activeSubSwiperIndex !== subSwiperIndex) {
-              //stopAutoplay(swiper);
+              stopAutoplay(swiper);
             } else {
               requestAnimationFrame(() => {
                 onSubSwiperSlideChange(swiper);
@@ -326,11 +326,6 @@ export default function createStoriesSlider(el, params = {}) {
         onSubSwiperSlideChange(subSwiper);
       }
     });
-  };
-
-  const autoplayTest = (swiper) => {
-    console.log('Tribute video started');
-    startAutoplay(swiper);
   };
 
   const pauseTribute = () => {
@@ -381,7 +376,6 @@ export default function createStoriesSlider(el, params = {}) {
     destroy,
     enable,
     disable,
-    autoplayTest,
     pauseTribute,
     resumeTribute,
   };

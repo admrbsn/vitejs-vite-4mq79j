@@ -33,10 +33,7 @@
         rounded-lg
       "
     >
-      <div @click="onAutoplayTest()" class="mt-6 ml-6">
-        test autoplay on mobile
-      </div>
-      <!--<button
+      <button
         v-if="pauseButtonVisible"
         @click="onPauseTribute()"
         class="
@@ -65,7 +62,7 @@
         "
       >
         <v-icon name="bi-play-circle-fill" scale="4" />
-      </button>-->
+      </button>
       <div class="swiper-wrapper">
         <slot />
       </div>
@@ -94,7 +91,6 @@ export default {
   },
   emits: [
     'storiesSlider',
-    'autoplayTest',
     'pauseTribute',
     'resumeTribute',
     'autoplayStart',
@@ -105,9 +101,6 @@ export default {
     const storiesSliderRef = ref(null);
     const pauseButtonVisible = ref(false);
     const resumeButtonVisible = ref(false);
-    const onAutoplayTest = () => {
-      ctx.emit('autoplayTest');
-    };
     const onPauseTribute = () => {
       ctx.emit('pauseTribute');
       resumeButtonVisible.value = true;
@@ -137,15 +130,14 @@ export default {
       ctx.emit('storiesSlider', storiesSliderRef.value);
     });
 
-    //onBeforeUnmount(() => {
-    //  if (storiesSliderRef.value && storiesSliderRef.value.destroy) {
-    //    storiesSliderRef.value.destroy();
-    //  }
-    //});
+    onBeforeUnmount(() => {
+      if (storiesSliderRef.value && storiesSliderRef.value.destroy) {
+        storiesSliderRef.value.destroy();
+      }
+    });
 
     return {
       elRef,
-      onAutoplayTest,
       onPauseTribute,
       onResumeTribute,
       pauseButtonVisible,
