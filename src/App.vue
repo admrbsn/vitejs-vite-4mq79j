@@ -174,7 +174,8 @@ export default {
         v-if="tributeStory.video"
         :src="tributeStory.video"
         playsinline
-        preload="auto"
+        preload="metadata"
+        muted
         class="
           object-contain object-center
           block
