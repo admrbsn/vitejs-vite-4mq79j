@@ -148,10 +148,12 @@ export default function createStoriesSlider(el, params = {}) {
       try {
         videoRaf = requestAnimationFrame(() => {
           //videoEl.play();
-          players[vimeoId].play();
+          players[vimeoId].play().then(function () {
+            players[vimeoId].setVolume(1); // unmute the video after playing
+          });
         });
       } catch (err) {
-        // error
+        console.log(err)
       }
     }
     const bullet = swiper.el.querySelector(
@@ -188,10 +190,12 @@ export default function createStoriesSlider(el, params = {}) {
       try {
         videoRaf = requestAnimationFrame(() => {
           //videoEl.play();
-          players[vimeoId].play();
+          players[vimeoId].play().then(function () {
+            players[vimeoId].setVolume(1); // unmute the video after playing
+          });
         });
       } catch (err) {
-        // error
+        console.log(err)
       }
     }
     // find other videos
