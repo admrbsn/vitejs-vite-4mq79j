@@ -1,6 +1,7 @@
 <script>
 export default {
   props: {
+    vimeoId: { type: Number, default: undefined },
     avatar: { type: String, default: undefined },
     recipient: { type: String, default: undefined },
     participant: { type: String, default: undefined },
@@ -11,6 +12,7 @@ export default {
 <template>
   <div
     class="swiper-slide rounded-md overflow-hidden"
+    :data-vimeo-id="vimeoId"
     :data-duration="duration"
   >
     <a

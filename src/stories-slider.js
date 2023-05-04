@@ -1,5 +1,7 @@
 /* eslint-disable no-shadow */
 // TODO: lots of things we can remove since we only need a single story player
+import Player from '@vimeo/player';
+
 export default function createStoriesSlider(el, params = {}) {
   const {
     autoplayDuration = 5000,
@@ -20,17 +22,52 @@ export default function createStoriesSlider(el, params = {}) {
   let autoplayTimeLeft;
   let autoplayTouchPaused;
 
+  function createVimeoPlayers() {
+    const vimeoPlayers = document.getElementsByClassName('vimeo-player');
+    const players = {};
+
+    for (let i = 0; i < vimeoPlayers.length; i++) {
+      const element = vimeoPlayers[i];
+      const id = element.id.split('_')[1];
+
+      players[id] = new Player(element, {
+        id: parseInt(id, 10),
+      });
+    }
+
+    return players;
+  }
+
+  const players = createVimeoPlayers();
+  //players['823050002'].play();
+  //players['4521583'].play();
+
+  /*const vimeo_823050002 = new Player('vimeo_823050002', {
+    id: 823050002,
+  });
+  const vimeo_4521583 = new Player('vimeo_4521583', {
+    id: 4521583,
+  });*/
+
   const startAutoplay = (swiper, durationForce) => {
     const subSwiperIndex = 0;
+    //TODO: need to fix duraction stuff via vimeo
     let duration =
       typeof durationForce === 'undefined' ? autoplayDuration : durationForce;
     let currentSlideDuration = parseInt(
       swiper.slides[swiper.activeIndex].getAttribute('data-duration'),
       10
     );
-    const videoEl = swiper.slides[swiper.activeIndex].querySelector('video');
-    if (Number.isNaN(currentSlideDuration) && videoEl) {
-      currentSlideDuration = videoEl.duration * 1000;
+    console.log(
+      swiper.slides[swiper.activeIndex].getAttribute('data-vimeo-id')
+    );
+    //TODO: can remove all videoEl stuff since we're playing from the players array
+    //const videoEl = swiper.slides[swiper.activeIndex].querySelector('video');
+    const vimeoId =
+      swiper.slides[swiper.activeIndex].getAttribute('data-vimeo-id');
+    if (Number.isNaN(currentSlideDuration) && vimeoId) {
+      //TODO: need to fix duraction stuff via vimeo
+      //currentSlideDuration = videoEl.duration * 1000;
     }
     if (
       !Number.isNaN(currentSlideDuration) &&
@@ -59,7 +96,9 @@ export default function createStoriesSlider(el, params = {}) {
   const pauseAutoplay = (swiper) => {
     stopAutoplay(swiper);
     // find current video
-    const videoEl = swiper.slides[swiper.activeIndex].querySelector('video');
+    //const videoEl = swiper.slides[swiper.activeIndex].querySelector('video');
+    const vimeoId =
+      swiper.slides[swiper.activeIndex].getAttribute('data-vimeo-id');
     if (videoEl) {
       cancelAnimationFrame(videoRaf);
       videoEl.pause();
@@ -68,6 +107,9 @@ export default function createStoriesSlider(el, params = {}) {
     let currentSlideDuration = parseInt(
       swiper.slides[swiper.activeIndex].getAttribute('data-duration'),
       10
+    );
+    console.log(
+      swiper.slides[swiper.activeIndex].getAttribute('data-vimeo-id')
     );
     if (Number.isNaN(currentSlideDuration)) currentSlideDuration = undefined;
     if (!currentSlideDuration && videoEl) {
@@ -97,11 +139,15 @@ export default function createStoriesSlider(el, params = {}) {
 
     startAutoplay(swiper, autoplayTimeLeft);
     // find current video
-    const videoEl = swiper.slides[swiper.activeIndex].querySelector('video');
-    if (videoEl) {
+    //const videoEl = swiper.slides[swiper.activeIndex].querySelector('video');
+    const vimeoId =
+      swiper.slides[swiper.activeIndex].getAttribute('data-vimeo-id');
+
+    if (vimeoId) {
       try {
         videoRaf = requestAnimationFrame(() => {
-          videoEl.play();
+          //videoEl.play();
+          players[vimeoId].play();
         });
       } catch (err) {
         // error
@@ -133,13 +179,15 @@ export default function createStoriesSlider(el, params = {}) {
       `.stories-slider-pagination-bullet:nth-child(${swiper.activeIndex + 1})`
     );
     // find current video
-    const videoEl = swiper.slides[swiper.activeIndex].querySelector('video');
-    if (videoEl) {
-      videoEl.currentTime = 0;
+    //const videoEl = swiper.slides[swiper.activeIndex].querySelector('video');
+    const vimeoId =
+      swiper.slides[swiper.activeIndex].getAttribute('data-vimeo-id');
+    if (vimeoId) {
+      //videoEl.currentTime = 0;
       try {
         videoRaf = requestAnimationFrame(() => {
-          videoEl.play();
-          videoEl.muted = false;
+          //videoEl.play();
+          players[vimeoId].play();
         });
       } catch (err) {
         // error
