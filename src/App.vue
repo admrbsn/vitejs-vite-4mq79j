@@ -85,6 +85,10 @@ export default {
             html: '<div id="vimeo_4521583" class="vimeo-player"></div>',
             vimeo_id: '4521583',
           },
+          {
+            html: '<div id="vimeo_215880646" class="vimeo-player"></div>',
+            vimeo_id: '215880646',
+          },
         ],
       },
     ];
