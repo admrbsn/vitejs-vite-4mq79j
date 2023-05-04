@@ -149,9 +149,7 @@ export default function createStoriesSlider(el, params = {}) {
         videoRaf = requestAnimationFrame(() => {
           //videoEl.play();
           players[vimeoId].play().then(function () {
-            setTimeout(() => {
-              players[vimeoId].setVolume(1); // unmute the video after playing
-            }, 1000);
+            players[vimeoId].setVolume(1); // unmute the video after playing
           });
         });
       } catch (err) {
@@ -188,27 +186,21 @@ export default function createStoriesSlider(el, params = {}) {
     const vimeoId =
       swiper.slides[swiper.activeIndex].getAttribute('data-vimeo-id');
     if (vimeoId) {
-      //videoEl.currentTime = 0;
-      try {
-        videoRaf = requestAnimationFrame(() => {
-          //videoEl.play();
-          players[vimeoId].play().then(function () {
-            setTimeout(() => {
-              players[vimeoId].setVolume(1); // unmute the video after playing
-            }, 1000);
-          });
+      const currentPlayer = players[vimeoId];
+      currentPlayer.ready().then(() => {
+        currentPlayer.play().then(() => {
+          currentPlayer.setVolume(1); // Unmute the video after playing
         });
-      } catch (err) {
-        console.log(err);
-      }
+      });
     }
     // find other videos
     swiper.slides.forEach((slideEl) => {
-      slideEl.querySelectorAll('video').forEach((vEl) => {
-        if (vEl === videoEl) return;
-        vEl.currentTime = 0;
-        if (!videoEl) cancelAnimationFrame(videoRaf);
-        vEl.pause();
+      slideEl.querySelectorAll('.vimeo-player').forEach((playerEl) => {
+        const playerId = playerEl.id.split('_')[1];
+        const currentPlayer = players[playerId];
+        if (playerId !== vimeoId) {
+          currentPlayer.pause();
+        }
       });
     });
 
