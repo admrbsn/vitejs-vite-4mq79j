@@ -32,6 +32,7 @@ export default function createStoriesSlider(el, params = {}) {
 
       players[id] = new Player(element, {
         id: parseInt(id, 10),
+        muted: true,
       });
     }
 
